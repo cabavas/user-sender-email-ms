@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: email
+  datasource:
+    url: jdbc:mysql://localhost:3308/ms-email-db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  rabbitmq:
+    addresses: amqps://wjbclkwh:UaqcHBdzynzNrtw4GDwa70OZjFUwJhCl@jaragua.lmq.cloudamqp.com/wjbclkwh
+    username: wjbclkwh
+    password: UaqcHBdzynzNrtw4GDwa70OZjFUwJhCl
+    virtual-host: wjbclkwh
+
+server:
+  port: 8080

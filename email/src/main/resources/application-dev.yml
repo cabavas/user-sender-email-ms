@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 30s
+    template:
+      retry:
+        enabled: true
+        initial-interval: 2s
+        max-attempts: 10
+        multiplier: 2

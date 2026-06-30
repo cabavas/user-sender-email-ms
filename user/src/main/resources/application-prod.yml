@@ -1,0 +1,6 @@
+spring:
+  rabbitmq:
+    addresses: amqps://wjbclkwh:UaqcHBdzynzNrtw4GDwa70OZjFUwJhCl@jaragua.lmq.cloudamqp.com/wjbclkwh
+    username: wjbclkwh
+    password: UaqcHBdzynzNrtw4GDwa70OZjFUwJhCl
+    virtual-host: wjbclkwh

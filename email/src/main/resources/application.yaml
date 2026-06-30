@@ -10,11 +10,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  rabbitmq:
-    addresses: amqps://wjbclkwh:UaqcHBdzynzNrtw4GDwa70OZjFUwJhCl@jaragua.lmq.cloudamqp.com/wjbclkwh
-    username: wjbclkwh
-    password: UaqcHBdzynzNrtw4GDwa70OZjFUwJhCl
-    virtual-host: wjbclkwh
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
 
 server:
   port: 8080

@@ -5,7 +5,6 @@ import com.example.email.dto.EmailDto;
 import com.example.email.service.EmailService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
@@ -23,6 +22,9 @@ public class EmailConsumer {
         System.out.println(emailDto);
         var email = new Email();
         BeanUtils.copyProperties(emailDto, email);
+        email.setSender(emailDto.recipient());
+        email.setSentAt(java.time.LocalDateTime.now());
+        email.setUserId(emailDto.id());
         emailService.sendEmail(email);
     }
 

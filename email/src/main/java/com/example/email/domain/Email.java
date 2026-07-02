@@ -13,7 +13,6 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "emails")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Email implements Serializable {
@@ -22,8 +21,9 @@ public class Email implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(columnDefinition = "BINARY(16)")
     private UUID id;
+    @Column(columnDefinition = "BINARY(16)")
     private UUID userId;
     private String recipient;
     private String sender;
@@ -35,4 +35,67 @@ public class Email implements Serializable {
     @Column(name = "sent_at")
     private LocalDateTime sentAt;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getUserId() {
+        return userId;
+    }
+
+    public void setUserId(UUID userId) {
+        this.userId = userId;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public EmailStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(EmailStatus status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getSentAt() {
+        return sentAt;
+    }
+
+    public void setSentAt(LocalDateTime sentAt) {
+        this.sentAt = sentAt;
+    }
 }

@@ -11,5 +11,22 @@ spring:
         retry:
           enabled: true
           initial-interval: 2s
-          max-attempts: 10
+          max-attempts: 1
           multiplier: 2
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: cabavas@gmail.com
+    password: ikhxpodtlwvdvlcb
+    protocol: smtp
+    test-connection: false
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            connectiontimeout: 5000
+            timeout: 5000
+            wrtietimeout: 5000
